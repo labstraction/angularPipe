@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { User } from 'src/app/model/user';
 
 @Component({
   selector: 'app-list',
@@ -7,26 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  public userList: User[] = [
-    {name: "fjoralba", ranking: 1},
-    {name: "simone", ranking: 5},
-    {name: "matteo", ranking: 4},
-    {name: "marco", ranking: 3},
-    {name: "lorenzo", ranking: 2},
-    {name: "alessandro", ranking: 7},
-    {name: "andrea", ranking: 6},
-  ]
+  @Input() public userList?:User[]
+  @Input() public listBackgroundColor:string = "tomato"
 
   constructor() { }
 
 
 
   ngOnInit(): void {
+    console.log("ciao")
   }
 
+  capitalizeFirst(word: string): string{
+    console.log("pippo");
+    
+    const firstChar = word[0];
+    const upperFirst = firstChar.toUpperCase();
+    const remainingChars = word.slice(1);
+    return upperFirst + remainingChars;
+  }
+
+
+
 }
 
-export interface User{
-  name: string;
-  ranking: number;
-}
+
