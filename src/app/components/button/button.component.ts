@@ -14,6 +14,9 @@ export class ButtonComponent implements OnInit {
   @Output() public userAdded = new EventEmitter<User>();
 
 
+  buttonOneTitle = "cambia utente"
+
+
   constructor() { }
 
   ngOnInit(): void {
