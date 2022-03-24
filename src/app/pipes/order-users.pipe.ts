@@ -20,7 +20,7 @@ export class OrderUsersPipe implements PipeTransform {
         return value;
       }
     } else {
-      return value as User[];
+      return value;
     }
   }
 
